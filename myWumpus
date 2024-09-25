@@ -8,13 +8,13 @@ and perform logic inference.
 
 class World:
     """
-    The Wumpus World.    
+    The Wumpus World.
     """
     def __init__(self):
         """
         Initialize the state of the game, where the Wumpus is, where the pits are, etc.
         Represent the entities in the world, 
-        - Maybe 2d array to represent the grid. 
+        - Maybe 2d array to represent the grid?
         """
         self.facts = set()
 
@@ -45,6 +45,14 @@ class World:
         Give the world a sentence and tell it that this sentence is true.
         """
         self.facts.add(sentence)
+
+
+def to_cnf(sentence):
+    """
+    Convert a sentence to its Conjunctive Normal Form CNF
+    """
+    if isinstance(sentence, str):
+        return sentence
 
 
 class Player:
