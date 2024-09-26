@@ -217,16 +217,15 @@ if __name__ == '__main__':
         ('NOT', 'S11'),
         ('IFF', 'B11', ('OR', 'P12', 'P21'))
     ]
-    # our question - is there a pit in [2,1] (so that we can move there)
-    query = 'P21' # we expect the answer to be False or ('NOT', 'P21') to be true
-    # kb = {"1.1": [not p, not w, not b, not s]}
+    #is there a pit in [2,1] (so that we can move there)
+    query = 'P21' #expect the answer to be False or ('NOT', 'P21') to be true
     player = Player(kb=initial_kb)
     print('This is the latest version')
-    print(player.make_inferences(query)) # -> either True or False
+    print(player.make_inferences(query))
 
     print("Running cnf test cases...")
     # Given KB = ['P', ('IMPLIES', 'P', 'Q')], Q should be True, and ('NOT', 'Q') should be False
-    kb1 = ['P', ('IMPLIES', 'P', 'Q')]
+    kb1 = ['P', ('IMPLIES', 'P', 'Q')] #I couldnt get this working for some reason, oof
     test_inference(kb1, 'Q', True)
     test_inference(kb1, ('NOT', 'Q'), False)
 
